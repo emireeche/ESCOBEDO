@@ -76,8 +76,9 @@ class UsuarioController extends Controller
     public function edit($id)
     {
         $usuario = Usuario::find($id);
-
-        return view('usuario.edit', compact('usuario'));
+        $empleados = Empleado::pluck('nombres','id');
+        $tipousuario= Tipousuario::pluck('descripcion','id');
+        return view('usuario.edit', compact('usuario','empleados','tipousuario'));
     }
 
     /**
