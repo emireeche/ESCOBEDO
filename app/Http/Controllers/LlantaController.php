@@ -78,6 +78,13 @@ class LlantaController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
+
+    public function llantaweb(){
+        $llanta = LLanta::all();
+      return view('welcome', compact('llanta'));
+    }
+
+
     public function edit($id)
     {
         $llanta = Llanta::find($id);

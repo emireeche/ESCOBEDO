@@ -13,7 +13,7 @@ use App\Http\Controllers\TipousuarioController;
 use Illuminate\Support\Facades\Route;
 
 /*
-|--------------------------------------------------------------------------
+|-----------------------------------------------s---------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
@@ -22,10 +22,6 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
@@ -43,6 +39,7 @@ Route::resource('vehiculo', VehiculoController::class);
 
 
 
+Route::get('/', [App\Http\Controllers\LlantaController::class, 'llantaweb'])->name('llantaweb');
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
